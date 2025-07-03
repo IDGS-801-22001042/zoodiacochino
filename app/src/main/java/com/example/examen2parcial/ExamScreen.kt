@@ -15,20 +15,44 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import kotlin.math.roundToInt
-import java.time.LocalDateTime // <-- AÑADIR ESTA IMPORTACIÓN
-import java.time.format.DateTimeFormatter // <-- AÑADIR ESTA IMPORTACIÓN
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun ExamScreen(fileHandler: FileHandler, onNavigateToResult: (Int) -> Unit) {
     val questions = remember {
         listOf(
-            Question("¿Cuál es la suma de 2+2?", listOf("8", "6", "4", "3"), 2),
-            Question("¿Cuántos días tiene una semana?", listOf("5", "7", "10", "3"), 1),
-            Question("¿Cuál es la capital de Francia?", listOf("Madrid", "Berlín", "París", "Roma"), 2),
-            Question("¿Qué planeta es conocido como el Planeta Rojo?", listOf("Venus", "Júpiter", "Marte", "Saturno"), 2),
-            Question("¿Quién escribió 'Don Quijote de la Mancha'?", listOf("Gabriel García Márquez", "Miguel de Cervantes", "Pablo Neruda", "Jorge Luis Borges"), 1),
-            Question("¿Cuál es el río más largo del mundo?", listOf("Nilo", "Amazonas", "Mississippi", "Yangtsé"), 1)
+            Question(
+                "¿Cuál es el elemento químico más abundante en la corteza terrestre?",
+                listOf("Oxígeno", "Silicio", "Aluminio", "Hierro"),
+                0 // Oxígeno
+            ),
+            Question(
+                "¿En qué año llegó el hombre a la Luna?",
+                listOf("1965", "1969", "1972", "1961"),
+                1 // 1969
+            ),
+            Question(
+                "¿Cuál es el océano más grande del mundo?",
+                listOf("Atlántico", "Índico", "Ártico", "Pacífico"),
+                3 // Pacífico
+            ),
+            Question(
+                "¿Qué instrumento se utiliza para medir la presión atmosférica?",
+                listOf("Termómetro", "Anemómetro", "Barómetro", "Higrómetro"),
+                2 // Barómetro
+            ),
+            Question(
+                "¿Quién pintó la Mona Lisa?",
+                listOf("Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"),
+                2 // Leonardo da Vinci
+            ),
+            Question(
+                "¿Cuál es la capital de Japón?",
+                listOf("Seúl", "Pekín", "Tokio", "Bangkok"),
+                2 // Tokio
+            )
         )
     }
 

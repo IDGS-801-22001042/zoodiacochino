@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
-import java.time.LocalDateTime // <-- AÑADIR ESTA IMPORTACIÓN
-import java.time.format.DateTimeFormatter // <-- AÑADIR ESTA IMPORTACIÓN
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 @OptIn(ExperimentalMaterial3Api::class)
@@ -189,7 +189,7 @@ fun PersonalInfoScreen(fileHandler: FileHandler, onNavigateToExam: (PersonalData
                             personalData.sexo
 
                     // Guardar datos personales, añadiendo al archivo
-                    fileHandler.writeToFile("personal_data.txt", personalDataString, true) // <-- GUARDAR EN MODO APPEND
+                    fileHandler.writeToFile("personal_data.txt", personalDataString, true)
 
                     onNavigateToExam(personalData)
                 } else {

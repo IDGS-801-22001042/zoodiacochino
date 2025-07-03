@@ -3,19 +3,19 @@ package com.example.examen2parcial
 
 import android.content.Context
 import java.io.*
-import android.util.Log // Asegúrate de tener esta importación
+import android.util.Log
 
 class FileHandler(private val context: Context) {
 
-    private val TAG = "FileHandler" // Etiqueta para tus logs
+    private val TAG = "FileHandler"
 
-    fun writeToFile(fileName: String, content: String, append: Boolean = false) { // <-- AÑADIR PARÁMETRO 'append'
+    fun writeToFile(fileName: String, content: String, append: Boolean = false) {
         try {
             val file = File(context.filesDir, fileName)
-            FileOutputStream(file, append).use { // <-- Usar el parámetro 'append' aquí
+            FileOutputStream(file, append).use {
                 it.write(content.toByteArray())
                 if (append) {
-                    it.write("\n".toByteArray()) // <-- AÑADIR SALTO DE LÍNEA AL FINAL SI SE ESTÁ AÑADIENDO
+                    it.write("\n".toByteArray())
                 }
             }
             Log.d(TAG, "Successfully wrote to file: $fileName (append=$append)")

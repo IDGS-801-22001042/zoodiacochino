@@ -114,7 +114,7 @@ fun ResultScreen(fileHandler: FileHandler, zodiacCalculator: ZodiacCalculator, o
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Botón para mostrar el contenido del TXT
+
         Button(onClick = {
             val personalDataContent = fileHandler.readFromFile("personal_data.txt") ?: "No se encontró personal_data.txt"
             val examResultsContent = fileHandler.readFromFile("exam_results.txt") ?: "No se encontró exam_results.txt"
@@ -125,10 +125,10 @@ fun ResultScreen(fileHandler: FileHandler, zodiacCalculator: ZodiacCalculator, o
             Text("Mostrar Registros del TXT")
         }
 
-        Spacer(modifier = Modifier.height(16.dp)) // Espaciador entre botones
+        Spacer(modifier = Modifier.height(16.dp))
 
-        // <-- NUEVO BOTÓN PARA IR A LA PÁGINA PRINCIPAL -->
-        Button(onClick = onNavigateToMain) { // <-- Usar el callback de navegación
+
+        Button(onClick = onNavigateToMain) {
             Text("Ir a la Página Principal")
         }
     }

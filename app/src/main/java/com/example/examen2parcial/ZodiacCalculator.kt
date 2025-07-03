@@ -15,7 +15,7 @@ class ZodiacCalculator {
         return Period.between(birthDate, currentDate).years
     }
 
-    fun getChineseZodiac(year: Int): Pair<String, Int> { // Returns zodiac name and a drawable resource ID
+    fun getChineseZodiac(year: Int): Pair<String, Int> {
         val zodiacAnimals = listOf(
             "Rata", "Buey", "Tigre", "Conejo", "Dragón", "Serpiente",
             "Caballo", "Cabra", "Mono", "Gallo", "Perro", "Cerdo"
@@ -27,7 +27,7 @@ class ZodiacCalculator {
             "Conejo" to R.drawable.conejo,
             "Dragón" to R.drawable.dragon,
             "Serpiente" to R.drawable.serpiente,
-            "Caballo" to R.drawable.caballo, // You need to add these drawables to your project
+            "Caballo" to R.drawable.caballo,
             "Cabra" to R.drawable.cabra,
             "Mono" to R.drawable.mono,
             "Gallo" to R.drawable.gallo,
@@ -35,9 +35,9 @@ class ZodiacCalculator {
             "Cerdo" to R.drawable.cerdo
         )
 
-        val startYear = 1900 // The cycle starts with the Rat in 1900
+        val startYear = 1900
         val offset = (year - startYear) % 12
         val zodiac = zodiacAnimals[offset]
-        return Pair(zodiac, zodiacImages[zodiac] ?: 0) // Return 0 or a default image if not found
+        return Pair(zodiac, zodiacImages[zodiac] ?: 0)
     }
 }

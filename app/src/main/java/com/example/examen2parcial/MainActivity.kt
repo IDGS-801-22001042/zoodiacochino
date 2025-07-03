@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.NavOptionsBuilder // <-- AÑADIR ESTA IMPORTACIÓN para popUpTo
+import androidx.navigation.NavOptionsBuilder
 import com.example.examen2parcial.ui.theme.Examen2ParcialTheme
 import androidx.compose.ui.platform.LocalContext
 
@@ -54,9 +54,9 @@ class MainActivity : ComponentActivity() {
                             ResultScreen(
                                 fileHandler = fileHandler,
                                 zodiacCalculator = zodiacCalculator,
-                                onNavigateToMain = { // <-- DEFINIR EL CALLBACK DE NAVEGACIÓN
+                                onNavigateToMain = {
                                     navController.navigate("personalInfo") {
-                                        // Esto limpia el "back stack" para que PersonalInfoScreen sea la única en la pila
+
                                         popUpTo("personalInfo") { inclusive = true }
                                     }
                                 }
